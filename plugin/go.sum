@@ -122,6 +122,8 @@ github.com/caddyserver/caddy/v2 v2.1.1 h1:X9k1+ehZPYYrSqBvf/ocUgdLSRIuiNiMo7CvyG
 github.com/caddyserver/caddy/v2 v2.1.1/go.mod h1:TIAlPMcVlm9gD/ZicynFkIq3ZPvG5kfRuDX0RpFpLAs=
 github.com/caddyserver/certmagic v0.11.2 h1:nPBqyuFNHJEf2FwC1ixJjArtTKWyPqpaH6k4jl7gxYI=
 github.com/caddyserver/certmagic v0.11.2/go.mod h1:fqY1IZk5iqhsj5FU3Vw20Sjq66tEKaanTFYNZ74soMY=
+github.com/caddyserver/xcaddy v0.1.5 h1:5kOplAJils1L9nIhzmHerVUQ9o4WF/bMEuw2DRIOSQE=
+github.com/caddyserver/xcaddy v0.1.5/go.mod h1:Gxj0yR1COUiWmOluEEQv8Ls7KZr47g5eltp9m0FFaJU=
 github.com/cenkalti/backoff/v4 v4.0.0 h1:6VeaLF9aI+MAUQ95106HwWzYZgJJpZ4stumjj6RFYAU=
 github.com/cenkalti/backoff/v4 v4.0.0/go.mod h1:eEew/i+1Q6OrCDZh3WiXYv3+nJwBASZ8Bog/87DQnVg=
 github.com/census-instrumentation/opencensus-proto v0.2.0/go.mod h1:f6KPmirojxKA12rnyqOA5BBL4O983OfeGPqjHWSTneU=
