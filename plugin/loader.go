@@ -7,6 +7,7 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"strings"
 	"sync"
 	"time"
 
@@ -197,19 +198,21 @@ func (dockerLoader *DockerLoader) updateServer(wg *sync.WaitGroup, server string
 		return
 	}
 
-	log.Printf("[INFO] Sending configuration to %v", server)
+	adminAddress := strings.TrimPrefix(getAdminListen(dockerLoader.options), "tcp/")
 
-	url := "http://" + server + ":2019/load"
+	log.Printf("[INFO] Sending configuration to %v", adminAddress)
 
-	postBody, err := addAdminListen(dockerLoader.lastJSONConfig, "tcp/"+server+":2019")
+	url := "http://" + adminAddress + "/load"
+
+	postBody, err := addAdminListen(dockerLoader.lastJSONConfig, "tcp/"+adminAddress)
 	if err != nil {
-		log.Printf("[ERROR] Failed to add admin listen to %v: %s", server, err)
+		log.Printf("[ERROR] Failed to add admin listen to %v: %s", adminAddress, err)
 		return
 	}
 
 	req, err := http.NewRequest("POST", url, bytes.NewBuffer(postBody))
 	if err != nil {
-		log.Printf("[ERROR] Failed to create request to %v: %s", server, err)
+		log.Printf("[ERROR] Failed to create request to %v: %s", adminAddress, err)
 		return
 	}
 	req.Header.Set("Content-Type", "application/json")
